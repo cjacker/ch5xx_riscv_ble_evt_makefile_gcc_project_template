@@ -92,16 +92,14 @@ rm -f c_source.list
 sed -i "s/CH5XX_BLE/$PART"_ble"/g" Makefile
 
 if [[ $PART = ch57* ]]; then
-  sed -i "s/CH5xx_common.h/CH57x_common.h/g" User/Main.c
+  sed -i "s/^#include \"CH5.*/#include \"CH57x_common.h\"/g" User/Main.c
   sed -i "s/libISP5xx.a/libISP573.a/g" Makefile 
 fi
 
 if [[ $PART = ch58* ]]; then
-  sed -i "s/CH5xx_common.h/CH58x_common.h/g" User/Main.c
+  sed -i "s/^#include \"CH5.*/#include \"CH58x_common.h\"/g" User/Main.c
   sed -i "s/libISP5xx.a/libISP583.a/g" Makefile 
 fi
 
-
 echo "#########################"
 echo "Done, project generated, type 'make' to build"
-
