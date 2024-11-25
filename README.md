@@ -4,10 +4,10 @@ This is a project template with related tools to convert WCH official CH5xx RISC
 
 This template will convert the EVT package to a Makefile project and setup Link.ld according to your MCU, it support All CH5xx RISC-V BLE EVT packages from WCH, include:
 
-- CH573EVT.ZIP
+- [CH573EVT.ZIP](https://www.wch.cn/downloads/CH573EVT_ZIP.html) v2.4   2024-01-16
   + CH571
   + CH573
-- CH583EVT.ZIP
+- [CH583EVT.ZIP](https://www.wch.cn/downloads/CH583EVT_ZIP.html) v2.1    2024-05-17
   + CH581
   + CH582
   + CH583

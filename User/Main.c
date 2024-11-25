@@ -10,7 +10,7 @@
  * microcontroller manufactured by Nanjing Qinheng Microelectronics.
  *******************************************************************************/
 
-#include "CH5xx_common.h"
+#include "CH58x_common.h"
 
 void board_led_init(void)
 {
