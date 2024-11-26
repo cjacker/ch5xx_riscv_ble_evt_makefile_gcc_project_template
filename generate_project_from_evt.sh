@@ -140,11 +140,13 @@ fi
 
 if [[ $PART = ch584 ]]; then
   sed -i "s/^#include \"CH5.*/#include \"CH58x_common.h\"/g" User/Main.c
+  sed -i 's@SetSysClock(CLK_SOURCE_PLL_60MHz);@HSECFG_Capacitance(HSECap_18p);\n    SetSysClock(CLK_SOURCE_HSE_PLL_62_4MHz);@g' User/Main.c
   sed -i "s/libISP5xx.a/libISP585.a/g" Makefile
 fi
 
 if [[ $PART = ch585 ]]; then
   sed -i "s/^#include \"CH5.*/#include \"CH58x_common.h\"/g" User/Main.c
+  sed -i 's@SetSysClock(CLK_SOURCE_PLL_60MHz);@HSECFG_Capacitance(HSECap_18p);\n    SetSysClock(CLK_SOURCE_HSE_PLL_62_4MHz);@g' User/Main.c
   sed -i "s/libISP5xx.a/libISP585.a/g" Makefile
 fi
 
