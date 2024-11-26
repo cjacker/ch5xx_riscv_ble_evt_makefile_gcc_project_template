@@ -6,7 +6,7 @@ if [ ! -f Makefile ]; then
   exit
 fi 
 
-PART_LIST="./ch5xx-riscv-ble-part-list.txt"
+PART_LIST="./parts-list.txt"
 
 # if no arg,
 if [ $# -ne 1 ]; then
@@ -50,13 +50,13 @@ fi
 
 setpart()
 {
-	PART_FAMILY=$1
-  if [ -f ./CH5xx_ble_firmware_library/StdPeriphDriver/inc/$PART_FAMILY"x_common.h" ]; then
+  PART_FAMILY=$1
+  if [ -f ./CH5xx_firmware_library/StdPeriphDriver/inc/$PART_FAMILY"x_common.h" ]; then
     sed -i "s/^TARGET = .*/TARGET = $PART/g" Makefile
     # generate the Linker script
-    sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ld.template > CH5xx_ble_firmware_library/Ld/Link.ld
-    sed -i "s/RAM_SIZE/$RAMSIZE/g" CH5xx_ble_firmware_library/Ld/Link.ld
-    sed -i "s/^CH5xx_ble_firmware_library\/Startup\/startup.*/CH5xx_ble_firmware_library\/Startup\/$STARTUP_ASM/g" Makefile
+    sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ld.template > CH5xx_firmware_library/Ld/Link.ld
+    sed -i "s/RAM_SIZE/$RAMSIZE/g" CH5xx_firmware_library/Ld/Link.ld
+    sed -i "s/^CH5xx_firmware_library\/Startup\/startup.*/CH5xx_firmware_library\/Startup\/$STARTUP_ASM/g" Makefile
   else
     echo "Not $PART_FAMILY project, can not set part to $PART"
     exit
