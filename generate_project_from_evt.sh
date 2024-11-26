@@ -74,9 +74,9 @@ rm -rf evt_tmp
 echo "Process linker script"
 LD_TEMPLATE=
 if [[ $PART = ch571 ]]; then
-  LD_TEMPLATE=Link.ch571.ld.template
+  LD_TEMPLATE=Link.ch573.ld.template
 elif [[ $PART = ch573 ]]; then
-  LD_TEMPLATE=Link.ch571.ld.template
+  LD_TEMPLATE=Link.ch573.ld.template
 elif [[ $PART = ch581 ]]; then
   LD_TEMPLATE=Link.ch583.ld.template
 elif [[ $PART = ch582 ]]; then
@@ -149,12 +149,12 @@ if [[ $PART = ch585 ]]; then
 fi
 
 if [[ $PART = ch591 ]]; then
-  sed -i "s/^#include \"CH5.*/#include \"CH58x_common.h\"/g" User/Main.c
+  sed -i "s/^#include \"CH5.*/#include \"CH59x_common.h\"/g" User/Main.c
   sed -i "s/libISP5xx.a/libISP592.a/g" Makefile
 fi
 
 if [[ $PART = ch592 ]]; then
-  sed -i "s/^#include \"CH5.*/#include \"CH58x_common.h\"/g" User/Main.c
+  sed -i "s/^#include \"CH5.*/#include \"CH59x_common.h\"/g" User/Main.c
   sed -i "s/libISP5xx.a/libISP592.a/g" Makefile
 fi
 
