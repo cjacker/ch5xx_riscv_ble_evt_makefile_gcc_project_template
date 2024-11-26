@@ -54,7 +54,13 @@ setpart()
   if [ -f ./CH5xx_firmware_library/StdPeriphDriver/inc/$PART_FAMILY"x_common.h" ]; then
     sed -i "s/^TARGET = .*/TARGET = $PART/g" Makefile
     # generate the Linker script
-    sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ld.template > CH5xx_firmware_library/Ld/Link.ld
+    if [[ $PART_FAMILY = CH57*  ]]; then
+    	sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ch573.ld.template > CH5xx_firmware_library/Ld/Link.ld
+    elif [[ $PART_FAMILY = CH58*  ]]; then
+    	sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ch583.ld.template > CH5xx_firmware_library/Ld/Link.ld
+    elif [[ $PART_FAMILY = CH59*  ]]; then
+    	sed "s/FLASH_SIZE/$FLASHSIZE/g" Link.ch592.ld.template > CH5xx_firmware_library/Ld/Link.ld
+    fi
     sed -i "s/RAM_SIZE/$RAMSIZE/g" CH5xx_firmware_library/Ld/Link.ld
     sed -i "s/^CH5xx_firmware_library\/Startup\/startup.*/CH5xx_firmware_library\/Startup\/$STARTUP_ASM/g" Makefile
   else
@@ -69,4 +75,8 @@ fi
 
 if [[ $PART = ch58* ]]; then
 	setpart CH58
+fi
+
+if [[ $PART = ch59* ]]; then
+	setpart CH59
 fi
