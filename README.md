@@ -28,3 +28,10 @@ Then type `make` to build the project.
 
 The `<part>.elf` / `<part>.bin` / `<part>.hex` will be generated at 'build' dir and can be programmed to target device later.
 
+## Note
+
+Please refer to [opensource-toolchain-ch32v tutorial](https://github.com/cjacker/opensource-toolchain-ch32v) for more info.
+
+And you must use [this latest WCH OpenOCD](https://github.com/cjacker/wch-openocd).
+
+
