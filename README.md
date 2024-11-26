@@ -11,6 +11,14 @@ This template will convert the EVT package to a Makefile project and setup Link.
   + CH581
   + CH582
   + CH583
+- [CH592EVT.ZIP](https://www.wch.cn/downloads/CH592EVT_ZIP.html) v1.4 	2024-09-09
+  + CH591
+  + CH592
+- [CH585EVT.ZIP](https://www.wch.cn/downloads/CH585EVT_ZIP.html) v1.2 	2024-11-25
+  + CH584
+  + CH585
+
+**NOTE:** For ch584/585, you have to use [MRS toolchain](http://file-oss.mounriver.com/tools/MRS_Toolchain_Linux_x64_V1.92.1.tar.xz) to support 'mcpy' instruction.
 
 ## Usage
 
